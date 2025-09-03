@@ -1,0 +1,95 @@
+.footer-section {
+  direction: rtl;
+  background: #0d1117;
+  color: #ccc;
+  padding: 60px 0 30px;
+}
+
+.footer-logo {
+  direction: rtl;
+
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.footer-logo span {
+  direction: rtl;
+
+  color: #0d6efd;
+}
+
+.footer-brand p {
+  direction: rtl;
+
+  margin-top: 15px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #bbb;
+}
+
+.footer-links h5,
+.footer-social h5 {
+  direction: rtl;
+
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  margin-right: 30px;
+}
+
+.footer-links ul {
+  direction: rtl;
+
+  list-style: none;
+  padding: 0;
+  margin-right: 30px;
+}
+
+.footer-links ul li {
+  direction: rtl;
+
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  direction: rtl;
+
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #0d6efd;
+}
+
+.social-icons a {
+  direction: rtl;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+  width: 40px;
+  height: 40px;
+  background: #1c1f26;
+  border-radius: 50%;
+  color: #bbb;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: #0d6efd;
+  color: #fff;
+}
+
+.footer-bottom {
+  direction: rtl;
+
+  border-top: 1px solid #222;
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 0.9rem;
+  color: #777;
+}
