@@ -7,6 +7,10 @@
   color: white;
 }
 
+.features-title {
+  text-align: right !important;
+}
+
 .features-bg {
   width: 100%;
 }
@@ -15,11 +19,11 @@
   font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 15px;
-  color: #0d6efd; /* خليها نفس الأزرق الأساسي */
+  color: #0d6efd ;
 }
 
 .feature-card {
-  background: #1c1f26; /* نفس ستايل الكورسات */
+  background: #1c1f26;
   border-radius: 20px;
   padding: 30px 20px;
   text-align: center;

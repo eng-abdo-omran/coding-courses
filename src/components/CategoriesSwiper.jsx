@@ -4,6 +4,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Link } from "react-router-dom";
 import categories from "../data/swiper-categories";
 
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -33,7 +34,7 @@ const CategoriesSwiper = () => {
               <div className="category-card">
                 <img src={cat.icon} alt={cat.title} />
                 <h3>
-                  <Link to={cat.link} className="category-link">
+                  <Link to={`/courses/${cat.id}`} className="category-link">
                     {cat.title}
                   </Link>
                 </h3>

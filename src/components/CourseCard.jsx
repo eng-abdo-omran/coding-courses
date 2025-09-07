@@ -1,10 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "./css/CourseCard.css";
 
-const CourseCard = ({ course, onOpen }) => {
+const CourseCard = ({ course }) => {
   return (
     <>
       <div className="col-md-6 col-lg-4 mb-4">
-        <div className="card course-card h-100">
+        <div className="card course-card h-100 shadow-sm">
           {course.image ? (
             <img
               src={course.image}
@@ -15,33 +17,37 @@ const CourseCard = ({ course, onOpen }) => {
           ) : (
             <div style={{ height: 160, background: "#e9ecef" }}></div>
           )}
+
           <div className="card-body d-flex flex-column">
-            <h5 className="card-title">{course.title}</h5>
-            <p className="card-text text-muted small">{course.short}</p>
-            <div className="mt-auto d-flex justify-content-between align-items-center">
-              <div>
-                <span className="badge bg-secondary">{course.level}</span>
-              </div>
-              <div>
-                <button
-                  className="btn btn-outline-primary btn-sm me-2"
-                  onClick={() => onOpen(course)}
-                >
-                  Open
-                </button>
-                <a
-                  className="btn btn-primary btn-sm"
-                  href={course.link}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Enroll
-                </a>
-              </div>
+
+            <h5 className="card-title course-title">{course.title}</h5>
+            <p className="card-text text-muted small course-des">
+              {course.short}
+            </p>
+
+
+            <div className="d-flex justify-content-between align-items-center mb-3">
+              <span className="badge bg-secondary">{course.level}</span>
+              <span className="course-price">
+                {course.price ? `${course.price} ج.م` : "Free"}
+              </span>
+            </div>
+
+
+            <div className="mt-auto d-flex justify-content-between">
+              <Link
+                to={`/courses/${course.id}`}
+                className="btn btn-outline-primary"
+              >
+                Open
+              </Link>
+              <Link to={`/courses/${course.id}`} className="btn btn-primary">
+                Enroll
+              </Link>
             </div>
           </div>
         </div>
-      </div>{" "}
+      </div>
     </>
   );
 };

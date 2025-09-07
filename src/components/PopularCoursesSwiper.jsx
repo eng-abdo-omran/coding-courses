@@ -5,6 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./css/PopularCoursesSwiper.css";
 
+import { Link } from "react-router-dom";   // 👈 اضفنا Link
 import courses from "../data/swiper-courses";
 
 const PopularCoursesSwiper = () => {
@@ -34,7 +35,10 @@ const PopularCoursesSwiper = () => {
                   <h3>{course.title}</h3>
                   <p>{course.description}</p>
                   <div className="course-footer">
-                    <button className="btn-enroll">سجل الآن</button>
+                    {/* 👇 الزرار الجديد اللي يودّي على التفاصيل */}
+                    <Link to={`/courses/${course.id}`} className="btn-enroll">
+                      سجل الآن
+                    </Link>
                     <span className="course-price">{course.price} ج.م</span>
                   </div>
                 </div>

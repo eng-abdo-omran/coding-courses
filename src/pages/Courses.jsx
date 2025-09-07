@@ -1,11 +1,10 @@
 import React, { useState, useMemo } from "react";
 import CourseCard from "../components/CourseCard";
-import CourseModal from "../components/CourseModal";
 import { courses as sampleCourses } from "../data/courses";
+
 const Courses = () => {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
-  const [selected, setSelected] = useState(null);
 
   const filtered = useMemo(() => {
     return sampleCourses.filter((c) => {
@@ -47,18 +46,9 @@ const Courses = () => {
 
         <div className="row">
           {filtered.map((c) => (
-            <CourseCard
-              key={c.id}
-              course={c}
-              onOpen={(course) => setSelected(course)}
-            />
+            <CourseCard key={c.id} course={c} />
           ))}
         </div>
-
-        {selected && <CourseModal course={selected} />}
-        {selected && (
-          <CourseModal course={selected} onClose={() => setSelected(null)} />
-        )}
       </div>
     </>
   );

@@ -1,11 +1,14 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Courses from "./pages/Courses";
 import Login from "./pages/Login";
+import CourseDetails from "./pages/CourseDetails";
 import Register from "./pages/Register";
+
 function App() {
   return (
     <>
@@ -13,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/courses" element={<Courses />} />
-        
+        <Route path="/courses/:id" element={<CourseDetails />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
