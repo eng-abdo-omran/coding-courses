@@ -1,9 +1,11 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { courses as sampleCourses } from "../data/courses";
+import { useAuth } from "../context/useAuth";  // 👈 إضافة
 
 const CourseDetails = () => {
   const { id } = useParams();
+  const { user } = useAuth(); // 👈 جلب المستخدم الحالي
   const course = sampleCourses.find((c) => c.id.toString() === id);
 
   if (!course) {
@@ -30,28 +32,30 @@ const CourseDetails = () => {
           <p className="text-muted">{course.category}</p>
           <p>{course.description || course.short}</p>
 
-          <h5 className="mt-4">What you'll learn</h5>
+          <h5 className="mt-4">ماذا ستتعلم؟</h5>
           <ul>
             {course.outcomes?.length ? (
               course.outcomes.map((o, i) => <li key={i}>{o}</li>)
             ) : (
-              <li>No outcomes listed</li>
+              <li>لا يوجد محتوى محدد</li>
             )}
           </ul>
         </div>
 
         <div className="col-md-4">
           <div className="card shadow-sm p-3">
-            <h4 className="mb-3">Course Info</h4>
-            <p><strong>Instructor:</strong> {course.instructor || "Unknown"}</p>
-            <p><strong>Duration:</strong> {course.duration || "N/A"}</p>
-            <p><strong>Level:</strong> {course.level || "All Levels"}</p>
-            <p><strong>Rating:</strong> ⭐ {course.rating || "N/A"}</p>
-            <p><strong>Students:</strong> {course.students || 0}</p>
-            <p><strong>Price:</strong> {course.price ? `${course.price} ج.م` : "Free"}</p>
+            <h4 className="mb-3">معلومات الكورس</h4>
+            <p><strong>المحاضر:</strong> {course.instructor || "غير معروف"}</p>
+            <p><strong>المدة:</strong> {course.duration || "غير محدد"}</p>
+            <p><strong>المستوى:</strong> {course.level || "كل المستويات"}</p>
+            <p><strong>التقييم:</strong> ⭐ {course.rating || "N/A"}</p>
+            <p><strong>الطلاب:</strong> {course.students || 0}</p>
+            <p><strong>السعر:</strong> {course.price ? `${course.price} ج.م` : "مجاني"}</p>
 
-            {/* الزرار الجديد */}
-            <Link to="/login" className="btn btn-primary w-100">
+            <Link 
+              to={user ? `/checkout/${course.id}` : "/login"} 
+              className="btn btn-primary w-100"
+            >
               اشترك الآن
             </Link>
           </div>

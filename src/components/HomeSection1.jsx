@@ -22,7 +22,7 @@ const HomeSection1 = () => {
               }}
             />
           </Col>
-          <Col style={{ textAlign: "right" }}>
+          <Col style={{ textAlign: "right"}}>
             <h1>المصدر العربي الاول لتعلم البرمجة باحترافية</h1>
             <p>
               نقدم لك افضل الدورات التعليمية في مجال البرمجة وتطوير الويب
